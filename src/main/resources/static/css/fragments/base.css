@@ -1,0 +1,175 @@
+/* INTESTAZIONE CSS */
+/* Fa riferimento al fragment "base :: intestazione" */
+
+.titleBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    background-color: #450000;
+}
+
+.titleBar > img {
+    height: 50px;
+    position: absolute;
+    left: 20px;
+}
+
+.titleBar a {
+    text-decoration: none;
+}
+
+.titleBar  h1 {
+    font-family: "Cinzel";
+    color: white;
+    font-size: 180%;
+    letter-spacing: 6px;
+    margin-left: 10px;
+}
+
+.auth {
+    color: white;
+	margin-right: 5px;
+	position: absolute;
+	right: 20px;
+}
+
+.register {
+	color: white;
+	margin-right: 5px;
+	position: absolute;
+	right: 200px;
+}
+
+nav {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    background-color: #7f0000;
+    overflow: hidden;
+}
+
+nav > a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 25px;
+    text-decoration: none;
+    font-size: 125%;
+}
+
+nav > a:hover {
+    background-color: #f2f2f2;
+    color: black;
+}
+  
+.searchForm {
+    display: flex;
+    height: 35px;
+    position: absolute;
+    right: 20px;
+}
+
+.searchForm > input {
+    background-color: #450000;
+    color: #f2f2f2;
+    border: 0px;
+}
+
+.searchForm > input:focus {
+    outline-width: 0px;
+}
+
+.searchForm > input::placeholder {
+    color: #f2f2f2;
+    font-family: "Montserrat Regular";
+}
+
+.searchForm > button {
+    width: 40px;
+    border: 0px;
+    color: #f2f2f2;
+    background-color: #7f0000;
+}
+
+.searchForm > button:hover {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+/* FOOTER CSS */
+/* Fa riferimento al fragment "base :: fondoPagina"*/
+
+footer {
+    display: flex;
+    height: auto;
+}
+
+footer span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerSpanScuro {
+    background-color: #111111;
+    /* Black palette: https://www.color-hex.com/color-palette/45492 */
+    flex-grow: 0.1;
+}
+
+.footerSpanChiaro {
+    background-color: #1e1e1e;
+    flex-grow: 1;
+}
+
+footer span h3 {
+    color: white;
+    text-align: center;
+}
+
+#map {
+    width: 400px;
+    height: 300px;
+    background-color: red;
+    border: 1px solid yellow;
+}
+
+newsletterForm {
+    display: flex;
+    height: auto;
+    width: 400px;
+    position: absolute;
+}
+
+.newsletterForm > input {
+    background-color: #450000;
+    color: #f2f2f2;
+    border: 0px;
+    height: 50px;
+    width: 400px;
+}
+
+.newsletterForm > input:focus {
+    outline-width: 0px;
+}
+
+.newsletterForm > input::placeholder {
+    color: #f2f2f2;
+    font-family: "Montserrat Regular";
+    font-size: 125%;
+}
+
+.newsletterForm > button {
+    width: 40px;
+    height: 50px;
+    border: 0px;
+    color: #f2f2f2;
+    background-color: #7f0000;
+}
+
+.newsletterForm > button:hover {
+    background-color: #f2f2f2;
+    color: black;
+}

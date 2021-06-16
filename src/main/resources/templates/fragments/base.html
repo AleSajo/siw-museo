@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headBase">
+	<link rel="stylesheet" href="/css/fragments/base.css">
+	<!-- <script src="/js/map.js"></script> -->
+</head>
+<body>
+	<div th:fragment="intestazione">
+	
+		<div class="titleBar">
+	        <img alt="Stemma della città di Pomezia" src="/images/Pomezia-Stemma.png">
+	        <a href="../home.html" th:href="@{/home}"><h1><i class="fas fa-landmark"></i> Museo di Pomezia</h1></a>
+	        <a class="auth" th:href="@{/login}">Admin Login</a>
+	        <!-- <a class="register" th:href="@{/register}">Register</a> -->
+    	</div>
+	    <nav>
+	        <a href="/collezioni.html" th:href="@{/collezioni}">Collezioni</a>
+	        <a href="/curatori.html" th:href="@{/curatori}">Curatori</a>
+	        <a href="/opere.html" th:href="@{/opere}">Opere</a>
+	        <a href="/artisti.html" th:href="@{/artisti}">Artisti</a>
+	        <a href="/informazioni.html" th:href="@{/informazioni}">Informazioni</a>
+	
+	        <form class="searchForm" th:action="@{/cerca}" method="POST">
+	            <input th:value="${cerca}" name="cerca" type="search" placeholder=" Cerca nel museo" autocomplete="off"/>
+	            <button type="submit"><i class="fas fa-search"></i></button>
+	        </form>
+	    </nav>
+	    
+	</div>
+	
+    <footer th:fragment="fondoPagina">
+        <span class="footerSpanScuro">
+            <h3>Siamo in Piazza Indipendenza 11, 00071, Pomezia (RM)</h3>
+            <div id="map"></div>
+            <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASGj9rm8bsfHmRqpjXFR8kvM3ZgoGluyw&callback=initMap&libraries=&v=weekly"
+                async></script>
+            <h3> </h3> <!-- un carattere spazio solo per distanziare la mappa dal basso -->
+        </span>
+        <span class="footerSpanChiaro">
+            <h3>Iscriviti alla nostra newsletter:</h3>
+            <form class="newsletterForm">
+                <input type="text" name="newsletter" placeholder=" Il tuo indirizzo email" autocomplete="off">
+                <button type="submit"><i class="fas fa-inbox"></i></button>
+            </form>
+        </span>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Museo di Pomezia - Inserisci Collezione</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/inserisciCollezione.css">
+    <!--color palette https://www.color-hex.com/color-palette/105136 -->
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+
+    <div th:replace="fragments/baseAdmin.html :: intestazione">Fragment intestazione</div>
+    
+    <header>
+        <img alt="Sfondo dell'header" src="/images/quadri-header.jpeg">
+        <h2>Inserisci Collezione</h2>
+        <i class="fas fa-chevron-down fa-4x"></i>
+    </header>
+    
+    <!-- Ricorda di gestire i messaggi di errore in questa pagina -->
+    <section>
+	    <div>
+			<form th:action="@{/inviaDatiCollezione}" method="POST">
+				<div>
+					<span>Nome della collezione: </span>
+					<span><input type="text" th:field="${nuovaCollezione.nome}" required/></span>
+				</div>
+				<div>
+					<span>Breve descrizione: </span>
+					<span><input type="text" th:field="${nuovaCollezione.descrizione}"/></span>
+				</div>
+				<div>
+					<span>Nome curatore: </span>
+					<span><input type="text" th:field="${nuovaCollezione.curatore.nome}"/></span>
+				</div>
+				<div>
+					<span>Cognome curatore: </span>
+					<span><input type="text" th:field="${nuovaCollezione.curatore.cognome}"/></span>
+				</div>
+				<div>
+					<span><button type="submit">Rivedi i dati</button></span>
+				</div>
+			</form>
+		</div>
+    </section>
+    
+    <div th:replace="fragments/base.html :: fondoPagina">Fragment fondo pagina</div>
+
+</body>
+
+</html>

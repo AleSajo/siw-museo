@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Collezione</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/collezione.css">
+    <!--color palette https://www.color-hex.com/color-palette/105136 -->
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+
+    <div th:replace="fragments/base.html :: intestazione">Fragment intestazione</div>
+
+    <header>
+        <h2 th:text="${collezione.nome}">Nome della collezione</h2>
+        <h3>una collezione di </h3>
+        <span><h3 th:text="|${collezione.curatore.nome} ${collezione.curatore.cognome}|">Nome e cognome del curatore</h3></span>
+        <i class="fas fa-chevron-down fa-4x"></i>
+    </header>
+	
+	<!-- ciclo for each che mostra tutte le opere della collezione -->
+    <section th:each="opera : ${collezione.opere}">
+        <img alt="Immagine dell'opera'" th:src="${opera.immagine}">
+        <div>
+            <a href="opera.html" th:href="@{'/opera/'+${opera.id}}"><h2 th:text="${opera.titolo}">Nome dell'opera</h2></a>
+            <a href=""><h3 th:text="|${opera.artista.nome} ${opera.artista.cognome}|">Artista dell'opera</h3></a>
+        </div>
+    </section>
+
+    <div th:replace="fragments/base.html :: fondoPagina"></div>
+</body>
+
+</html>

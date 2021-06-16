@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Museo di Pomezia - Collezioni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- mantengo lo stesso css della home perché va bene -->
+    <link rel="stylesheet" href="/css/home.css">
+    <!--color palette https://www.color-hex.com/color-palette/105136 -->
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+
+    <div th:replace="fragments/base.html :: intestazione">Fragment intestazione</div>
+    
+    <header>
+        <img alt="Sfondo dell'header" src="/images/quadri-header.jpeg">
+        <h2>Risultati della ricerca</h2>
+        <i class="fas fa-chevron-down fa-4x"></i>
+    </header>
+	
+	<!-- opere trovate -->
+    <section class="sectionChiara" th:each="opera : ${opere}">
+        <img alt="Immagine dell'opera" th:src="${opera.immagine} ?: 'NO IMMAGINE'">
+        <div>
+        	<a href="opera.html" th:href="@{'/opera'+'/'+${opera.id}}">
+            	<h3 th:text="${opera.titolo} ?: 'NO TITLE'">Titolo dell'opera</h3>
+            </a>
+            <p th:text="${opera.descrizione} ?: 'NO DESCRIPTION'">Descrizione dell'opera</p>
+        </div>
+    </section>
+    
+    <!-- collezioni trovate -->
+    <section class="sectionChiara" th:if="${collezione} != null">
+        <img alt="Immagine della collezione" th:src="${collezione.opere[0].immagine} ?: 'NO IMMAGINE'">
+        <div>
+        	<a href="collezione.html" th:href="@{'/collezione'+'/'+${collezione?.id}}">
+            	<h3 th:text="${collezione.nome} ?: 'NO NAME'">Nome collezione</h3>
+            </a>
+            <p th:text="${collezione.descrizione} ?: 'NO DESCRIPTION'">Descrizione della collezione</p>
+        </div>
+    </section>
+    
+    <!-- artisti trovati -->
+    <section class="sectionChiara" th:each="artista : ${artisti}">
+        <img alt="Immagine dell'artista" th:src="${artista.opere[0].immagine} ?: 'NO IMMAGINE'">
+        <div>
+        	<a href="artista.html" th:href="@{'/artista'+'/'+${artista.id}}">
+            	<h3 th:text="|${artista.nome} ${artista.cognome}|">Nome artista</h3>
+            </a>
+            <p>Altre eventuali info sull'artista</p>
+        </div>
+    </section>
+    
+    <div th:replace="fragments/base.html :: fondoPagina"></div>
+    
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+@font-face {
+    font-family: "Cinzel";
+    src: url("/fonts/Cinzel/Cinzel-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url(/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+body {
+    font-family: "Montserrat Regular";
+    background-color: black;
+}
+
+header {
+    height: 450px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background-image: url(/images/backgroundartista.jpeg);
+    background-position: center;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+header div img {
+    height: 175px;
+    border: 5px groove #f2f2f2;
+    width: auto;
+    margin: 2%;
+}
+
+header div table {
+    color: #f2f2f2;
+}
+
+#bioContainer {
+    margin: 2%;
+    width: 50%;
+    padding: 2% 2% 2% 2%;
+}
+
+#bioContainer h2 {
+    font-family: "Cinzel";
+    font-size: 200%;
+}
+
+#bioContainer h2, p {
+    color: #f2f2f2;
+}
+
+section {
+    height: 450px;
+    display: flex;
+    background-color: #7f0000;
+}
+
+section div {
+    flex-grow: 1;
+    width: 33%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section div img {
+    height: 80%;
+    width: 80%;
+    margin-bottom: 2%;
+}
+
+section div a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 25px;
+    text-decoration: none;
+    font-size: 125%;
+}
+
+section div a:hover {
+    background-color: #f2f2f2;
+    color: black;
+}

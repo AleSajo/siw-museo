@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Museo di Pomezia - Curatori</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- mantengo lo stesso css della home perché va bene -->
+    <link rel="stylesheet" href="/css/home.css">
+    <!--color palette https://www.color-hex.com/color-palette/105136 -->
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+
+    <div th:replace="fragments/base.html :: intestazione">Fragment intestazione</div>
+    
+    <header>
+        <img alt="Sfondo dell'header" src="/images/quadri-header.jpeg">
+        <h2>I nostri curatori</h2>
+        <i class="fas fa-chevron-down fa-4x"></i>
+    </header>
+
+    <section class="sectionChiara" th:each="curatore : ${curatori}">
+    	<!-- aggiungere il percorso dell'immagine' -->
+        <!-- <img alt= src=""> -->
+        <div>
+        	<a href="curatore.html" th:href="@{'/curatore'+'/'+${curatore.id}}">
+            	<h3 th:text="|${curatore.nome} ${curatore.cognome}|">Nome curatore</h3>
+            </a>
+            <p>Altre eventuali info curatore</p>
+        </div>
+    </section>
+
+    <div th:replace="fragments/base.html :: fondoPagina"></div>
+    
+</body>
+
+</html>

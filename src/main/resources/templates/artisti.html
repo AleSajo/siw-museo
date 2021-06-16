@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Museo di Pomezia - Artisti</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- mantengo lo stesso css della home perché va bene -->
+    <link rel="stylesheet" href="/css/home.css">
+    <!--color palette https://www.color-hex.com/color-palette/105136 -->
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+
+    <div th:replace="fragments/base.html :: intestazione">Fragment intestazione</div>
+    
+    <header>
+        <img alt="Sfondo dell'header" src="/images/quadri-header.jpeg">
+        <h2>Gli artisti delle nostre opere</h2>
+        <i class="fas fa-chevron-down fa-4x"></i>
+    </header>
+
+    <section class="sectionChiara" th:each="artista : ${artisti}">
+    	<!-- aggiungere il percorso dell'immagine' -->
+        <img alt="Immagine della prima opera dell'artista'" src="" th:src="${artista.opere[0].immagine}">
+        <div>
+        	<a href="artista.html" th:href="@{'/artista'+'/'+${artista.id}}">
+            	<h3 th:text="|${artista.nome} ${artista.cognome}|">Nome artista</h3>
+            </a>
+            <p>Altre eventuali info artista</p>
+        </div>
+    </section>
+
+    <div th:replace="fragments/base.html :: fondoPagina"></div>
+    
+</body>
+
+</html>

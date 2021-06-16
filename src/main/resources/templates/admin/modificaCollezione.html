@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- ############################# -->
+<!-- # ADMIN MODIFICA COLLEZIONE # -->
+<!-- ############################# -->
+<html>
+<head>
+    <title>Museo di Pomezia - Admin Modifica Collezione</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/modificaCollezione.css">
+    <!--color palette https://www.color-hex.com/color-palette/105136 -->
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+
+    <div th:replace="fragments/baseAdmin.html :: intestazione">Fragment intestazione</div>
+    
+    <header>
+        <img alt="Sfondo dell'header" src="/images/quadri-header.jpeg">
+        <h2>Modifica Collezione</h2>
+        <i class="fas fa-chevron-down fa-4x"></i>
+    </header>
+    
+    <section>
+    	<!-- dettagli della collezione -->
+	    <div>
+	    	<h3>Dettagli della collezione</h3>
+	    	<div>
+		    	<span>Nome: </span>
+		    	<span th:text="${collezione.nome}"></span>
+		    </div>
+		    <div>
+		    	<span>Descrizione: </span>
+		    	<span th:text="${collezione.descrizione}"></span>
+	    	</div>
+	    	<div>
+		    	<span>Curatore: </span>
+		    	<span th:text="|${collezione.curatore.nome} ${collezione.curatore.cognome}| ?: 'SCONOSCIUTO'"></span>
+	    	</div>
+	    	<h3>Opere contenute</h3>
+	    	<div th:each="opera : ${collezione.opere}">
+	    		<span th:text="${opera.titolo} ?:SCONOSCIUTO">Titolo opera</span>
+	    		<span><a th:href="@{'/eliminaOpera/' + ${opera.id}}"> X </a></span>
+	    	</div>
+	    </div>
+	    <!-- form che modifica i dettagli della collezione -->
+	    <div>
+	    	<form>
+	    		<h3>Modifca curatore</h3>
+				<div>
+					<span>Nome curatore: </span>
+					<span><input name="nomeCuratore" type="text" required /></span>
+				</div>
+				<div>
+					<span>Cognome curatore: </span>
+					<span><input name="cognomeCuratore" type="text" required /></span>
+				</div>
+				<div>
+					<span><button type="submit">Aggiungi</button></span>
+				</div>
+			</div>
+	    	</form>
+	    </div>
+	    <!-- form che consente l'aggiunta di un'opera -->
+	    <div>
+	    	<form th:action="@{'/aggiungiOpera/'+${collezione.id}}" method="POST">
+	    		<h3>Aggiungi un'opera</h3>
+				<div>
+					<span>Titolo opera: </span>
+					<span><input th:field="${nuovaOpera.titolo}" type="text" required /></span>
+				</div>		
+				<div>
+					<span>Descrizione: </span>
+					<span><input th:field="${nuovaOpera.descrizione}" type="text" required /></span>
+				</div>
+				<div>
+					<span>Anno: </span>
+					<span><input th:field="${nuovaOpera.anno}" type="text" required /></span>
+				</div>
+				<div>
+					<span>Link immagine: </span>
+					<span><input th:field="${nuovaOpera.immagine}" type="text" required /></span>
+				</div>
+				<div>
+					<span>Nome artista: </span>
+					<span><input th:field="${nuovoArtista.nome}" type="text" required /></span>
+				</div>
+				
+				<div>
+					<span>Cognome artista: </span>
+					<span><input th:field="${nuovoArtista.cognome}" type="text" required /></span>
+				</div>
+				
+				<div>
+					<span><button type="submit">Aggiungi</button></span>
+				</div>
+			</div>
+	    	</form>
+	    </div>
+    </section>
+    
+    <section class="eliminaCollezione">
+    	<div>
+    		<a href="confermaEliminaCollezione.html" th:href="@{'/eliminaCollezione/'+${collezione.id}}"><h3 class="elimina">Elimina collezione</h3></a>
+    	</div>
+    </section>
+	
+    <div th:replace="fragments/base.html :: fondoPagina">Fragment fondo pagina</div>
+
+</body>
+
+</html>

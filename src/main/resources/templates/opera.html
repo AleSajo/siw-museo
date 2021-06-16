@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Opera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/opera.css">
+    <!--color palette https://www.color-hex.com/color-palette/105136 -->
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+
+    <div th:replace="fragments/base.html :: intestazione">Fragment intestazione</div>
+
+    <section id="descrizioneOpera">
+        <div>
+            <h2 th:text="${opera.titolo}">Titolo dell'opera</h2>
+            <a th:href="@{'/collezione/' + ${opera.collezione.id}}">
+            	<h3 th:text="${opera.collezione.nome}">Nome della Collezione</h3>
+            </a>
+        </div>
+        <img alt="Immagine dell'opera'" th:src="${opera.immagine}">
+        <p></p>
+        <h3>Descrizione</h3>
+        <p th:text="${opera.descrizione}">Descrizione dell'opera</p>
+        <h2> </h2> <!-- spazio vuoto -->
+    </section>
+    
+    <div th:replace="fragments/base.html :: fondoPagina"></div>
+</body>
+
+</html>

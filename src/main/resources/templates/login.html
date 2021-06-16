@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Museo di Pomezia - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+	<div th:replace="fragments/base.html :: intestazione">Fragment intestazione</div>
+	
+	<section>
+		<h2>Login</h2>
+		<div>
+			<form class="loginForm" th:action="@{/login}" method="POST">
+				<div>
+					<div>
+						<span>Username:</span>
+						<span><input name="username" type="text" required /></span>
+					</div>		
+					<div>
+						<span>Password:</span>
+						<span><input name="password" type="password" required /></span>
+					</div>
+					<div>
+						<span><button type="submit">Login</button></span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	
+    <div th:replace="fragments/base.html :: fondoPagina"></div>
+
+</body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- ############## -->
+<!-- # ADMIN HOME # -->
+<!-- ############## -->
+<html>
+<head>
+    <title>Museo di Pomezia - Admin Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/adminHome.css">
+    <!--color palette https://www.color-hex.com/color-palette/105136 -->
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+
+    <div th:replace="fragments/baseAdmin.html :: intestazione">Fragment intestazione</div>
+    
+    <header>
+        <img alt="Sfondo dell'header" src="/images/quadri-header.jpeg">
+        <h2>Home amministratore</h2>
+        <i class="fas fa-chevron-down fa-4x"></i>
+    </header>
+    
+    <!-- lista in cui compaiono i nomi delle collezioni -->
+    <section>
+	    <ul class="listaCollezioni">
+	    	<li><h2>- Collezioni -</h2></li>
+	    	<li><a href="/inserisciCollezione" th:href="@{/inserisciCollezione}">(+) INSERISCI NUOVA COLLEZIONE</a></li>
+	    	
+	    	<li th:each="collezione : ${collezioni}">
+	    		<a href="/modificaCollezione.html" th:href="@{'/modificaCollezione/' + ${collezione.id}}" th:text="${collezione.nome}">
+	    			Nome della collezione
+	    		</a>
+	    	</li>
+	    	
+	    	<li><h2> </h2></li>
+	    </ul>
+    </section>
+	
+    <div th:replace="fragments/base.html :: fondoPagina">Fragment fondo pagina</div>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Museo di Pomezia - Collezioni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- mantengo lo stesso css della home perché va bene -->
+    <link rel="stylesheet" href="/css/home.css">
+    <!--color palette https://www.color-hex.com/color-palette/105136 -->
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+
+    <div th:replace="fragments/base.html :: intestazione">Fragment intestazione</div>
+    
+    <header>
+        <img alt="Sfondo dell'header" src="/images/quadri-header.jpeg">
+        <h2>Le nostre collezioni</h2>
+        <i class="fas fa-chevron-down fa-4x"></i>
+    </header>
+
+    <section class="sectionChiara" th:each="collezione : ${collezioni}">
+    	<!-- aggiungere il percorso dell'immagine' -->
+        <img alt="Immagine della collezione" src="" th:src="${collezione.opere[0].immagine}">
+        <div>
+        	<a href="collezione.html" th:href="@{'/collezione'+'/'+${collezione.id}}">
+            	<h3 th:text="${collezione.nome}">Nome collezione</h3>
+            </a>
+            <p th:text="${collezione.descrizione}">Descrizione della collezione</p>
+        </div>
+    </section>
+
+    <div th:replace="fragments/base.html :: fondoPagina"></div>
+    
+</body>
+
+</html>

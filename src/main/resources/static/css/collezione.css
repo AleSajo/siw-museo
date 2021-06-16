@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "Cinzel";
+    src: url(/fonts/Cinzel/Cinzel-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url(/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+body {
+    font-family: "Montserrat Regular";
+    background-color: black;
+}
+
+header {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/images/backgroundcollezione.jpeg);
+    background-position: top;
+    background-size: 100%;
+}
+
+header h2 {
+    position: relative;
+    font-family: "Cinzel";
+    color: #f2f2f2;
+    font-size: 400%;
+    letter-spacing: 4px;
+}
+
+header h3 {
+    color: #f2f2f2;
+}
+
+header > i {
+    position: relative;
+    color: #f2f2f2;
+    margin: 2%;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background-color: #450000;
+}
+
+.sectionChiara {
+    background-color: #7f0000;
+}
+
+section img {
+    height: 350px;
+    margin: 2%;
+
+}
+
+section div a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+section div h2:hover, section div h3:hover {
+    color: black;
+    background-color: white;
+}
+
+section div a h2 {
+    font-family: "Cinzel";
+    font-size: 150%;
+}

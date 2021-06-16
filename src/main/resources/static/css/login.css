@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "Cinzel";
+    src: url(/fonts/Cinzel/Cinzel-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url(/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+body {
+	font-family: "Montserrat Regular";
+	background-color: black;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	height: 400px;
+	background-color: #450000;
+	align-items: center;
+	justify-content: center;
+}
+
+section > div {
+    margin: 5%;
+    padding: 20px;
+    background-color: #7f0000;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+section h2 {
+    color: #f2f2f2;
+    font-size:xx-large;
+}
+
+section form div {
+	margin-top: 5%;
+}
+
+section span {
+	color: #f2f2f2;
+}
+
+section p {
+    color: #f2f2f2;
+}

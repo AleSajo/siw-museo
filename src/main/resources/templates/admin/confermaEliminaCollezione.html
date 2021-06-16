@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- ############################ -->
+<!-- # ADMIN ELIMINA COLLEZIONE # -->
+<!-- ############################ -->
+<html>
+<head>
+    <title>Museo di Pomezia - Elimina Collezione</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/modificaCollezione.css">
+    <!--color palette https://www.color-hex.com/color-palette/105136 -->
+</head>
+<head th:replace="fragments/base.html :: headBase"></head>
+
+<body>
+
+    <div th:replace="fragments/baseAdmin.html :: intestazione">Fragment intestazione</div>
+    
+    <header>
+        <img alt="Sfondo dell'header" src="/images/quadri-header.jpeg">
+        <h2>Modifica Collezione</h2>
+        <i class="fas fa-chevron-down fa-4x"></i>
+    </header>
+    
+    <section>
+    	<!-- dettagli della collezione -->
+	    <div>
+	    	<h3>Dettagli della collezione</h3>
+	    	<div>
+		    	<span>Nome: </span>
+		    	<span th:text="${collezione.nome}"></span>
+		    </div>
+		    <div>
+		    	<span>Descrizione: </span>
+		    	<span th:text="${collezione.descrizione}"></span>
+	    	</div>
+	    </div>
+	    <div>
+	    	<h3>Confermi di voler eliminare questa collezione?</h3>
+	    	<a href="adminHome.html" th:href="@{/confermaEliminaCollezione}"><h3 class="elimina">Conferma</h3></a>
+	    </div>
+    </section>
+	
+    <div th:replace="fragments/base.html :: fondoPagina">Fragment fondo pagina</div>
+
+</body>
+
+</html>
